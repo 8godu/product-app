@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="max-w-xl mx-auto p-6 bg-white shadow rounded">
+    <h2 class="text-xl font-bold mb-4">Contact Seller about {{ product.title }}</h2>
+    <form method="post" class="flex flex-col gap-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+            Send Message
+        </button>
+    </form>
+</div>
+{% endblock %}
